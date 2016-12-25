@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gai.appgai">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        // for each activity we should declare here
+        <activity android:name=".MainActivity">
+            <intent-filter>
+
+
+                //those two are just for the main activity
+
+                // indicate this is the first activity to launch
+                <action android:name="android.intent.action.MAIN" />
+
+                // indicate we can launch the app from the icon on the device
+                //without it , there will not be icon on the screen
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+
+        <service android:name=".MyService" />
+
+        <receiver android:name="MyReceiver">
+
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+            </intent-filter>
+
+        </receiver>
+
+    </application>
+
+</manifest>
